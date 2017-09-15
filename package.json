@@ -1,0 +1,8 @@
+{
+  "name": "funfunmentorship",
+  "version": "0.0.0",
+  "description": "A tool to pair up beginner functioneers with mentors",
+  "main": "index.js",
+  "author": "DavDavDavid",
+  "license": "MIT"
+}
