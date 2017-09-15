@@ -2,21 +2,33 @@
 import bluebird from 'bluebird'
 import setGlobal from './set-global'
 setGlobal('Promise', bluebird)
-import 'babel-polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+
 import App from './components/App'
 
-import { formatUser } from './users'
-
-const fetchUsers = async () => {
-  let data = await (await fetch('https://ffforumautomator.herokuapp.com/hackable-data')).json()
-  return data.map(formatUser)
-  .filter(user => !!user.mentorship)
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
+  );
 }
 
-ReactDOM.render(
-  <App fetchUsers={fetchUsers} />,
-  document.getElementById('root')
-);
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./components/App', () => { render(App) })
+}
+// // Hot Module Replacement API
+// if (module.hot) {
+//   console.log("it's hot hot HOT!")
+  
+//   module.hot.accept()
+//   // module.hot.accept('./components/App', () => {
+//     // render(App)
+//   // });
+// }

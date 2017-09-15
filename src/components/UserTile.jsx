@@ -3,10 +3,10 @@ import React from 'react'
 
 const TechList = ({ className, name, list }) => (
   <div>
-    <h2 className='title'>{name}</h2>
+    <h3 className='title'>{name}</h3>
     <ul className={className}>
       {list.map(tech =>
-        <span key={tech}>{tech}</span>
+        <li key={tech}>{tech}</li>
       )}
     </ul>
   </div>
@@ -14,7 +14,7 @@ const TechList = ({ className, name, list }) => (
 
 export default ({user}) => (
   <div className='user'>
-    <span className='name'>{user.username}</span>
+    <h2 className='name'><a href={user.url}>{user.username}</a></h2>
     <TechList className='seeking' name='Seeking' list={user.mentorship.seeking} />
     <TechList className='offering' name='Offering' list={user.mentorship.offering} />
   </div>

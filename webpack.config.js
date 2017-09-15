@@ -5,13 +5,27 @@ const webpack = require('webpack');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const SRC_DIR = path.resolve(__dirname, 'src');
+const PORT = process.env.PORT || 9876
 
 let config = {
-  entry: path.join(SRC_DIR, 'index.js'),
+  entry: {
+    bundle: [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      './src/index'
+    ]
+  },
   output: {
     path: BUILD_DIR,
+    publicPath: '/static/',
+    filename: '[name].js'
+  },
+  devtool: "source-map",
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    hot: true,
+    port: PORT
   },
   module: {
     loaders: [
@@ -32,12 +46,9 @@ let config = {
       }
     ]
   },
-  devtool: "source-map",
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    port: 9876
-  },
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+  ],
   resolve: {
     extensions: ['.js', '.jsx']
   }
