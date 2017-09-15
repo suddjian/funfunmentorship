@@ -1,8 +1,40 @@
 {
   "name": "funfunmentorship",
   "version": "0.0.0",
-  "description": "A tool to pair up beginner functioneers with mentors",
+  "description": "A tool to match beginner functioneers with mentors",
   "main": "index.js",
   "author": "DavDavDavid",
-  "license": "MIT"
+  "homepage": "https://github.com/ChemicalRocketeer/funfunmentorship",
+  "license": "MIT",
+  "scripts": {
+    "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill test/*.js",
+    "prepublishOnly": "npm test && webpack",
+    "start": "webpack-dev-server --progress"
+  },
+  "bugs": {
+    "url": "http://github.com/ChemicalRocketeer/funfunmentorship/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^2.9.1",
+    "json-loader": "^0.5.7",
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "dependencies": {}
 }

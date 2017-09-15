@@ -1,0 +1,26 @@
+[
+  {
+    "username": "mpj",
+    "hackable_json": "{ \"usermap_location\": { \"lat\": 57.7089, \"lng\": 11.9746, \"caption\": \"Gôtt mos\" }, \"other_prop\": 1}"
+  },
+  {
+    "username": "DavDavDavid",
+    "hackable_json": "{ \"name\": \"David Suddjian\", \"usermap_location\": {\"lat\": 36.9927, \"lng\": -122.1697, \"caption\": \"Programstinating\"} }"
+  },
+  {
+    "username": "JustinRyder",
+    "hackable_json": "{ \"usermap_location\": { \"lat\": 34.42, \"lng\": -86.39, \"caption\": \"There are only 2 difficult things in programming: naming things, cache invalidation, and off by one errors.\" } }"
+  },
+  {
+    "username": "Talan77",
+    "hackable_json": "{ \"usermap_location\": { \"lat\": 42.1221, \"lng\": -72.8006, \"caption\": \"<i>let paradox= paradox?</i> false:true;<hr><b>const perspective= 'toggle';</b>\" } }"
+  },
+  {
+    "username": "Ben_Hofferber",
+    "hackable_json": "{ \"usermap_location\": { \"lat\": 43.618881, \"lng\": ‎-116.215019, \"caption\": \"Hello!\" } }"
+  },
+  {
+    "username": "Supamic",
+    "hackable_json": " { \"usermap_location\": { \"lat\": 48.428039, \"lng\": -123.372062, \"caption\": \"Hello, world!\" } }"
+  }
+]
