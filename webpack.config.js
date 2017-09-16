@@ -1,43 +1,32 @@
-'use strict'
+const webpack = require('webpack')
+const path = require('path')
 
-const path = require('path');
-const webpack = require('webpack');
-
-const BUILD_DIR = path.resolve(__dirname, 'dist');
-const SRC_DIR = path.resolve(__dirname, 'src');
 const PORT = process.env.PORT || 9876
 
-let config = {
+module.exports = {
+  devtool: 'source-map',
   entry: {
-    bundle: [
+    'app': [
       'babel-polyfill',
       'react-hot-loader/patch',
       './src/index'
     ]
   },
   output: {
-    path: BUILD_DIR,
-    publicPath: '/static/',
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
     filename: '[name].js'
   },
-  devtool: "source-map",
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    port: PORT,
     publicPath: '/',
-    hot: true,
-    port: PORT
+    contentBase: path.resolve(__dirname, './dist')
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        exclude: path.resolve(__dirname, 'node_modules'),
-        loader: 'babel-loader'
-      },
+    rules: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
         test: /\.(css)/,
-        include: SRC_DIR,
         use: ['style-loader', 'css-loader']
       },
       {
@@ -52,6 +41,4 @@ let config = {
   resolve: {
     extensions: ['.js', '.jsx']
   }
-};
-
-module.exports = config;
+}

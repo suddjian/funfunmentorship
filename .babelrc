@@ -1,10 +1,16 @@
 {
   "presets": [
-    ["env",{"modules":false}],
+    [
+      "latest", {
+        "es2015": { // IMPORTANT TO USE THIS AND NOT ENV FOR HOT RELOAD GOD FUCKING DAMN IT REACT/WEBPACK/WHOEVER THE FUCK IS RESPONSIBLE FOR THIS SHIT SHOW OF INCOMPATIBLE DEPENDENCIES.
+          "modules": false
+        }
+      }
+    ],
     "react",
     "stage-0"
   ],
-  "plugins" : [
+  "plugins": [
     "react-hot-loader/babel"
   ]
 }

@@ -2,30 +2,34 @@
 import React from 'react'
 import UserTile from './UserTile'
 
-import { formatUser } from '../users'
+import { makeFetchUsers } from '../users'
 
-const fetchUsers = async () => {
-  let data = await (await fetch('https://ffforumautomator.herokuapp.com/hackable-data')).json()
-  return data.map(formatUser)
-    .filter(user => !!user.mentorship)
-}
+const fetchUsers = makeFetchUsers(async () =>
+  await (await fetch('https://ffforumautomator.herokuapp.com/hackable-data')).json()
+)
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
-    fetchUsers()
-    .then(users => this.setState({ users }))
-    .catch(error => {
-      console.error(error)
-      this.setState({ error })
-    })
   }
 
-  render() {
+  async componentDidMount() {
+    if (!this.state.users) {
+      try {
+        let data = await fetchUsers()
+        this.setState({ users: data })
+      } catch (error) {
+        console.error('Failed to fetch user data', error)
+        this.setState({ error })
+      }
+    }
+  }
+
+  render () {
     return (
       <div>
-        <h1>Connecting Functioneers Since 2am!</h1>
+        <h1>Connecting Functioneers Since 2am!!!</h1>
         {
           this.state.users
           ? this.state.users.map(user =>

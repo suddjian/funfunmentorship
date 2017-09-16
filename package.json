@@ -9,34 +9,36 @@
   "scripts": {
     "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill test/*.js",
     "prepublishOnly": "npm test && webpack",
-    "start": "webpack-dev-server --hot --history-api-fallback --open"
+    "start": "webpack-dev-server --hot --history-api-fallback --open",
+    "dev": "webpack-dev-server --hot --history-api-fallback --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChemicalRocketeer/funfunmentorship.git"
   },
   "bugs": {
     "url": "http://github.com/ChemicalRocketeer/funfunmentorship/issues"
   },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
     "bluebird": "^3.5.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "css-loader": "^0.28.7",
-    "enzyme": "^2.9.1",
     "json-loader": "^0.5.7",
-    "lodash": "^4.17.4",
     "mocha": "^3.5.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-hot-loader": "next",
-    "react-test-renderer": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.18.2",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.8.2"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }
