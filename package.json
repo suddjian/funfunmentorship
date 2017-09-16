@@ -9,7 +9,7 @@
   "scripts": {
     "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill test/*.js",
     "prepublishOnly": "npm test && webpack",
-    "start": "webpack-dev-server --hot --history-api-fallback --open",
+    "build": "webpack",
     "dev": "webpack-dev-server --hot --history-api-fallback --open"
   },
   "repository": {
