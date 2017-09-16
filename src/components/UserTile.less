@@ -1,0 +1,27 @@
+
+@import './mixins';
+
+.userTile {
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "skills skills";
+  border: solid 1px @color-light;
+}
+
+.username {
+  grid-area: title;
+}
+
+.skillList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.skill {
+  padding: 0.3em;
+  white-space: nowrap;
+}

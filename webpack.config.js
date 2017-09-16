@@ -26,8 +26,22 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
-        test: /\.(css)/,
-        use: ['style-loader', 'css-loader']
+        test: /\.(css|less)$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: { hmr: false }
+          },
+          { loader: 'css-loader',
+            query: {
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]'
+            }
+          },
+          { loader: 'less-loader', options: {
+            sourceMap: true
+          }},
+        ]
       },
       {
         test: /\.json$/,
@@ -37,6 +51,8 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
   ],
   resolve: {
     extensions: ['.js', '.jsx']

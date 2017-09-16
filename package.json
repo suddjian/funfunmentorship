@@ -7,11 +7,12 @@
   "homepage": "https://github.com/ChemicalRocketeer/funfunmentorship",
   "license": "MIT",
   "scripts": {
-    "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill test/*.js",
+    "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill --require ./src/conf test/*.js",
     "test:watch": "npm run test -- --watch",
     "prepublishOnly": "npm test && webpack",
     "build": "webpack",
-    "start": "webpack-dev-server --hot --history-api-fallback --open"
+    "start": "webpack-dev-server --hot --history-api-fallback --open",
+    "lint": "eslint src/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
@@ -35,12 +37,16 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "css-loader": "^0.28.7",
+    "eslint": "^4.7.0",
+    "file-loader": "^0.11.2",
     "json-loader": "^0.5.7",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "lodash": "^4.17.4",
     "mocha": "^3.5.3",
     "react-hot-loader": "^3.0.0-beta.6",
     "style-loader": "^0.18.2",
-    "webpack": "^2.2.1",
+    "webpack": "^3.6.0",
     "webpack-dev-server": "^2.4.1"
   }
 }

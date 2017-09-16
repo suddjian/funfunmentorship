@@ -37,22 +37,29 @@ export const formatUser = (user) => {
   }
 }
 
-export const makeFetchUsers = (fetcher) => async (attempts=0) => {
-  let data = await fetcher()
-  if (data.error_code) {
-    console.error(data.error_message)
-    if (benignErrorCodes.find(data.error_code)) {
-      // TODO let the user know there's a delay
-      await Promise.delay(10000)
-      return fetchUsers(attempts + 1)
+export const getProfileUrl = (size) => (username) =>
+  `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
+
+export const makeFetchUsers = (fetcher) => {
+  const fetchUsers = async (onFailWait=5000) => {
+    let data = await fetcher()
+    if (data.error_code) {
+      console.error(data.error_message)
+      if (benignErrorCodes.includes(data.error_code)) {
+        // TODO let the user know there's a delay
+        await Promise.delay(onFailWait)
+        return fetchUsers(onFailWait * 2)
+      }
     }
+    // TODO map/filter asynchronously so as not to hog the event loop
+    return data.map(formatUser)
+    .filter(user => !!user.mentorship)
   }
-  // TODO map/filter asynchronously so as not to hog the event loop
-  return data.map(formatUser)
-  .filter(user => !!user.mentorship)
+  return fetchUsers
 }
 
 export const extractSkills = (users) => {
+  // TODO async processing so as not to hog the event loop
   const skills = users.reduce((skills, user) => {
     user.mentorship[group].forEach(skillName => {
       const skillId = snakeCase(skillName)

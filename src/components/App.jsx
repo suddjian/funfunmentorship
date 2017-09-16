@@ -1,7 +1,7 @@
 
 import React from 'react'
 import UserTile from './UserTile'
-
+import style from './App.less'
 import { makeFetchUsers } from '../users'
 
 const fetchUsers = makeFetchUsers(async () =>
@@ -20,7 +20,6 @@ export default class App extends React.Component {
         let data = await fetchUsers()
         this.setState({ users: data })
       } catch (error) {
-        console.error('Failed to fetch user data', error)
         this.setState({ error })
       }
     }
@@ -28,8 +27,8 @@ export default class App extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1>Connecting Functioneers Since 2am!!!</h1>
+      <div className={style.app} >
+        <h1>Connecting Functioneers Since 2am!</h1>
         {
           this.state.users
           ? this.state.users.map(user =>
