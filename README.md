@@ -1,6 +1,6 @@
 # funfunmentorship
 
-This project aims to pair people seeking to expand their knowledge with people willing to impart their wisdom upon the unlearned.
+This project aims to pair people seeking to expand their knowledge with people willing to impart their wisdom.
 
 To participate, edit your `hackable_json` to include a `mentorship` field with `seeking` and `offering` arrays, like so:
 
