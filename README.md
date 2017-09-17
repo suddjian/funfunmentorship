@@ -1,5 +1,4 @@
 # funfunmentorship
-Quenching Functioneers' search for knowledge
 
 This project aims to pair people seeking to expand their knowledge with people willing to impart their wisdom upon the unlearned.
 
