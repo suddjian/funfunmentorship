@@ -1,7 +1,31 @@
 @import './mixins.less';
 
+:global * {
+  box-sizing: border-box;
+}
+
 :global .title {
+  margin: 0.5em 0;
   color: @color-darkish;
+}
+
+:global .profile-tiny {
+  border-radius: 28px;
+  margin-right: 0.5rem;
+  transform: translateY(20%);
+}
+
+:global a {
+  color: @color-link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+:global body {
+  background: @color-verylight;
 }
 
 .app {

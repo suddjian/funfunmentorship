@@ -6,7 +6,12 @@
   grid-template-areas:
     "title title"
     "skills skills";
+  grid-template-columns: 50% 50%;
   border: solid 1px @color-light;
+  border-radius: .1em;
+  padding: .5em;
+  margin-bottom: 1em;
+  background: white;
 }
 
 .username {
@@ -16,12 +21,23 @@
 .skillList {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
 
+.skillTitle {
+  margin: 0.5em 0;
+}
+
 .skill {
-  padding: 0.3em;
+  padding: 0.2rem;
+  margin: 0.2rem;
   white-space: nowrap;
+  font-size: 0.8rem;
+  color: @color-link;
+  background-color: @color-lightlink;
+  border: 1px solid @color-lightishlink;
+  border-radius: 0.1em;
 }

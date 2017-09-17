@@ -28,6 +28,9 @@ const normalizeMentorship = (mentorship) => ({
   offering: toArray(mentorship.offering)
 })
 
+export const getProfileUrl = (size) => (username) =>
+  `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
+
 export const formatUser = (user) => {
   let json = parseHackableJSON(user.hackable_json)
   return {
@@ -36,9 +39,6 @@ export const formatUser = (user) => {
     mentorship: json && json.mentorship && normalizeMentorship(json.mentorship)
   }
 }
-
-export const getProfileUrl = (size) => (username) =>
-  `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
 
 export const makeFetchUsers = (fetcher) => {
   const fetchUsers = async (onFailWait=5000) => {
@@ -66,7 +66,7 @@ export const extractSkills = (users) => {
       if (!skills[skillId]) {
         skills[skillId] = {
           skillId,
-          nameVotes: {}, // TODO heapify nameVotes
+          nameVotes: {}, // TODO heapify nameVotes for _performance!_
           seeking: [],
           offering: []
         }

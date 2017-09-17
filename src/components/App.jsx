@@ -28,7 +28,7 @@ export default class App extends React.Component {
   render () {
     return (
       <div className={style.app} >
-        <h1>Connecting Functioneers Since 2am!</h1>
+        <h1 className='title'>Connecting Functioneers Since 2am!</h1>
         {
           this.state.users
           ? this.state.users.map(user =>

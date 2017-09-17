@@ -2,9 +2,13 @@
 import React from 'react'
 import style from './UserTile.less'
 
-const TechList = ({ className, title, list }) => (
-  <div className={style.techList}>
-    <h3 className='title'>{title}</h3>
+import { getProfileUrl } from '../users'
+
+const getTitlePic = getProfileUrl(28)
+
+const SkillList = ({ className, title, list }) => (
+  <div>
+    <h3 className={`title ${style.skillTitle}`}>{title}</h3>
     <ul className={style.skillList}>
       {list.map(tech =>
         <li key={tech} className={style.skill}>{tech}</li>
@@ -15,8 +19,13 @@ const TechList = ({ className, title, list }) => (
 
 export default ({user}) => (
   <div className={style.userTile}>
-    <span className={style.username}><a href={user.url}>{user.username}</a></span>
-    <TechList title='Seeking' list={user.mentorship.seeking} />
-    <TechList title='Offering' list={user.mentorship.offering} />
+    <span className={style.username}>
+      <a className={style.userLink} href={user.url}>
+        <img className='profile-tiny' src={getTitlePic(user.username)} />
+        {user.username}
+      </a>
+    </span>
+    <SkillList title='Seeking' list={user.mentorship.seeking} />
+    <SkillList title='Offering' list={user.mentorship.offering} />
   </div>
 )
