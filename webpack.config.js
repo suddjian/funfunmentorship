@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 
+const OUT_DIR = path.resolve(__dirname, './docs')
 const PORT = process.env.PORT || 9876
 
 module.exports = {
@@ -13,14 +14,14 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: OUT_DIR,
     publicPath: '/',
     filename: '[name].js'
   },
   devServer: {
     port: PORT,
     publicPath: '/',
-    contentBase: path.resolve(__dirname, './dist')
+    contentBase: OUT_DIR
   },
   module: {
     rules: [
