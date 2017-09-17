@@ -53,4 +53,8 @@ describe('skill utils', () => {
       }
     })
   })
+
+  it('should map name votes', () => {
+    const nameVotes = {}
+  })
 })

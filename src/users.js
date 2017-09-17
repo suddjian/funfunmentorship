@@ -21,7 +21,7 @@ const toArray = (data) => {
   }
 }
 
-const normalizeMentorship = (mentorship) => ({
+export const normalizeMentorship = (mentorship) => ({
   seeking: toArray(mentorship.seeking),
   offering: toArray(mentorship.offering)
 })

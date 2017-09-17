@@ -43,3 +43,19 @@ export const igor = {
     }
   })
 }
+
+export const redundantDave = {
+  rawData: () => ({
+    "username": "DavDavDavid",
+    "hackable_json": "{ \"name\": \"David Suddjian\", \"mentorship\": { \"seeking\": [ \"golang\", \"GoLang\" ], }, \"usermap_location\": {\"lat\": 36.9927, \"lng\": -122.1697, \"caption\": \"Programstinating\"} }"
+  }),
+  formattedData: () => ({
+    username: 'DavDavDavid',
+    "hackable_json": "{ \"name\": \"David Suddjian\", \"mentorship\": { \"seeking\": [ \"golang\", \"GoLang\" ], }, \"usermap_location\": {\"lat\": 36.9927, \"lng\": -122.1697, \"caption\": \"Programstinating\"} }",
+    url: 'https://www.funfunforum.com/u/DavDavDavid/',
+    mentorship: {
+      seeking: ['golang', 'GoLang'],
+      offering: []
+    }
+  })
+}
