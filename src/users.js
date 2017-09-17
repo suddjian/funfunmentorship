@@ -1,6 +1,4 @@
 
-import { snakeCase } from 'lodash'
-
 const benignErrorCodes = [
   'warming_up'
 ]
@@ -56,30 +54,4 @@ export const makeFetchUsers = (fetcher) => {
     .filter(user => !!user.mentorship)
   }
   return fetchUsers
-}
-
-export const extractSkills = (users) => {
-  // TODO async processing so as not to hog the event loop
-  const skills = users.reduce((skills, user) => {
-    user.mentorship[group].forEach(skillName => {
-      const skillId = snakeCase(skillName)
-      if (!skills[skillId]) {
-        skills[skillId] = {
-          skillId,
-          nameVotes: {}, // TODO heapify nameVotes for _performance!_
-          seeking: [],
-          offering: []
-        }
-      }
-      const skill = skills[skillId]
-      skill[group].push(user.username)
-      skill.nameVotes[skillName] = (skill.nameVotes[skillName] || 0) + 1
-    })
-    return skills
-  }, {})
-  const skillNames = Object.keys(skills)
-  return {
-    skillNames,
-    skills: skillNames.map(skillName => skills[skillName])
-  }
 }

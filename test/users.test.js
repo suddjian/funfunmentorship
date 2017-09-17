@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { cloneDeep } from 'lodash'
-import { mpj, DavDavDavid } from './fixtures'
+import { mpj, DavDavDavid, igor } from './fixtures'
 import { formatUser, makeFetchUsers } from '../src/users'
 
 describe('user utils', () => {
@@ -10,13 +10,14 @@ describe('user utils', () => {
       .to.deep.equal(user.formattedData())
     test(mpj)
     test(DavDavDavid)
+    test(igor)
   })
 
   it('should filter users from the raw endpoint json', async () => {
     const fetchUsers = makeFetchUsers(() =>
-      [ mpj.rawData(), DavDavDavid.rawData() ]
+      [ mpj.rawData(), DavDavDavid.rawData(), igor.rawData() ]
     )
-    expect(await fetchUsers()).to.deep.equal([DavDavDavid.formattedData()])
+    expect(await fetchUsers()).to.deep.equal([DavDavDavid.formattedData(), igor.formattedData()])
   })
 
   it('should handle benign errors when loading users', async () => {
