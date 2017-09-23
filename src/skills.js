@@ -24,9 +24,9 @@ export const extractSkillMap = (users, category) => {
   return skillMap
 }
 
-// (this filters out identical skills for each user, but not for all users as a whole)
+// returns a list of all the unique skill names used
 export const gatherAllSkillNames = (users) => uniq(flatten(users.map(user =>
-  user.mentorship.seeking.concat(user.membership.offering)
+  user.mentorship.seeking.concat(user.mentorship.offering)
 )))
 
 // filters out any skills with the same normalized value as other ones in the set

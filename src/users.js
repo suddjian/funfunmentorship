@@ -7,22 +7,21 @@ const parseHackableJSON = (hackableJSON) => {
   try {
     return JSON.parse(hackableJSON)
   } catch (err) {
-    return null
+    throw err
   }
 }
 
 const toArray = (data) => {
-  if (data instanceof Array) {
-    return data
-  } else if (typeof data === 'string') {
-    return data.split(' ')
-  } else {
-    return []
+  if (typeof data === 'string') {
+    data = data.split(' ')
+  } else if (!Array.isArray(data)) {
+    data = []
   }
+  return data.filter(item => typeof item === 'string')
 }
 
 export const normalizeMentorship = (mentorship) => ({
-  seeking: toArray(mentorship.seeking),
+  seeking: toArray(mentorship.seeking).map(String),
   offering: toArray(mentorship.offering)
 })
 
@@ -30,7 +29,12 @@ export const getProfileUrl = (size) => (username) =>
   `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
 
 export const formatUser = (user) => {
-  let json = parseHackableJSON(user.hackable_json)
+  let json
+  try {
+    json = parseHackableJSON(user.hackable_json) || undefined
+  } catch(err) {
+    console.log(user.username)
+  }
   return {
     ...user,
     url: `https://www.funfunforum.com/u/${user.username}/`,
