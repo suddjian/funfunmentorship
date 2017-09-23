@@ -7,7 +7,7 @@ const parseHackableJSON = (hackableJSON) => {
   try {
     return JSON.parse(hackableJSON)
   } catch (err) {
-    throw err
+    return null
   }
 }
 
@@ -29,12 +29,7 @@ export const getProfileUrl = (size) => (username) =>
   `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
 
 export const formatUser = (user) => {
-  let json
-  try {
-    json = parseHackableJSON(user.hackable_json) || undefined
-  } catch(err) {
-    console.log(user.username)
-  }
+  let json = parseHackableJSON(user.hackable_json) || undefined
   return {
     ...user,
     url: `https://www.funfunforum.com/u/${user.username}/`,
