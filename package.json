@@ -1,6 +1,6 @@
 {
   "name": "funfunmentorship",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool to match beginner functioneers with mentors",
   "main": "index.js",
   "author": "DavDavDavid",
