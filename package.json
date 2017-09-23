@@ -9,7 +9,7 @@
   "scripts": {
     "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill --require ./src/conf test/*.js",
     "test:watch": "npm run test -- --watch",
-    "prepublish": "npm test && npm run lint && npm run build",
+    "prepublish": "npm test && npm run lint && npm run build && git add ./docs/* && git commit -m building",
     "build": "webpack -p",
     "start": "webpack-dev-server --hot --history-api-fallback --open",
     "lint": "eslint src/index.js"
