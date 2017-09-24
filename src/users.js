@@ -37,6 +37,19 @@ export const formatUser = (user) => {
   }
 }
 
+export const userMentionsSkill = (user, skill) => {
+  if (!user.mentorship) {
+    return false
+  }
+
+  skill = skill.toLowerCase()
+  const seeking = user.mentorship.seeking.map(x => x.toLowerCase())
+  const offering = user.mentorship.offering.map(x => x.toLowerCase())
+  const includesSkill = list => list.some(x => x.includes(skill))
+
+  return includesSkill(seeking) || includesSkill(offering)
+}
+
 export const makeFetchUsers = (fetcher) => {
   const fetchUsers = async (onFailWait=5000) => {
     let data = await fetcher()
