@@ -10,4 +10,5 @@ deploy:
 script:
 - "npm test"
 - "npm run lint"
+before_deploy:
 - "npm run build"
