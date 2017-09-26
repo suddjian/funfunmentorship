@@ -1,43 +1,108 @@
-
 @import './mixins';
+@import './typography';
+
+@base-padding: 3rem;
+@skill-gutter: 0.7em;
 
 .userTile {
   display: grid;
-  grid-template-areas:
-    "title title"
-    "skills skills";
-  grid-template-columns: 50% 50%;
-  border: solid 1px @color-light;
-  border-radius: .2em;
-  padding: .5em;
-  margin-bottom: 0.8em;
-  background: white;
+  grid-template-areas: "userInfo skills";
+  grid-template-columns: 30% 70%;
+  border-radius: .3em;
+  margin-bottom: 2em;
+  overflow: hidden;
+  background: @color-background--dark;
+  box-shadow: @box-shadow--main;
+  border: 1px dotted @color-background--darker;
 }
 
-.username {
-  grid-area: title;
+.userInfo {
+  grid-area: userInfo;
+  background-color: @color-background--darker;
+  padding: @base-padding*0.7 @base-padding;
+  text-align: center;
 }
 
-.skillList {
+.userName {
+  display: block;
+  font-weight: @font-weight--bold;
+  font-size: 1.3em;
+  padding-top: 0.8em;
+}
+
+.userLocation {
+  display: block;
+  font-size: 0.9em;
+  padding-top: 0.2em;
+}
+
+.userCaption {
+  display: block;
+  font-size: 0.9em;
+  padding-top: 1em;
+}
+
+
+.skillArea {
+  grid-area: skills;
+  padding: @base-padding * 0.3 @base-padding;
+}
+
+.skillsCategory {
+  padding: 2em 2em 2em-@skill-gutter;
+  display: flex;
+  position: relative;
+
+  &:first-child {
+    border-bottom: 1px solid @color-primary;
+    padding-top: 2.5em;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-top-width: 1rem;
+      border-bottom-width: 1rem;
+      border-right: 1.5rem solid @color-background--dark;
+      left: -1.5rem - @base-padding;
+    }
+  }
+}
+
+.skills {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
-.skillTitle {
+.skillsCategoryTitle {
   margin: 0.5em 0;
+  font-size: 0.8rem;
+  padding-right: 3rem;
 }
 
-.skill {
-  padding: 0.2rem;
-  margin: 0.2rem;
+
+// FIX ME - First time working with CSS Modules, 
+// this can't be globally scoped, dunno how to fix! :(
+:global .skill {
+  padding: 0.5em 0.9em;
+  margin-right: @skill-gutter;
+  margin-bottom: @skill-gutter;
   white-space: nowrap;
-  font-size: 0.8rem;
-  color: @color-link;
-  background-color: @color-lightlink;
-  border: 1px solid @color-lightishlink;
-  border-radius: 0.1em;
+  font-size: 0.9rem;
+  border-radius: 0.15em;
+  display: inline-block;
+}
+
+:global .skill-Seeking {
+  color: @color-primary--font;
+  background-color: @color-primary;
+}
+
+
+:global .skill-Offering {
+    color: @color-secondary--font;
+    background-color: @color-secondary;
 }

@@ -4,31 +4,18 @@
   box-sizing: border-box;
 }
 
-:global .title {
-  margin: 0.5em 0;
-  color: @color-darkish;
+:global body {
+  background: @color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@profile-pic-tiny-width: 28px;
+@profile-pic-tiny-width: 80px;
 
 :global .profile-tiny {
   border-radius: @profile-pic-tiny-width / 2;
   width: @profile-pic-tiny-width;
   height: @profile-pic-tiny-width;
-  margin-right: 0.5rem;
-  margin-top: -5px;
-  transform: translateY(5px);
 }
 
-:global a {
-  color: @color-link;
-  text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-:global body {
-  background: @color-verylight;
-}
