@@ -1,12 +1,12 @@
 {
   "search.exclude": {
-    "docs/*.js": true,
-    "docs/*.map": true,
-    "docs/*.css": true
+    "dist/*.js": true,
+    "dist/*.map": true,
+    "dist/*.css": true
   },
   "files.exclude": {
-    "docs/*.js": false,
-    "docs/*.map": false,
-    "docs/*.css": false
+    "dist/*.js": false,
+    "dist/*.map": false,
+    "dist/*.css": false
   }
 }
