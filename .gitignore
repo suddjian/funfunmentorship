@@ -39,4 +39,5 @@ jspm_packages
 #IDE
 .idea
 
-dist/
+docs/**
+!docs/index.html
