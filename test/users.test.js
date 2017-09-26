@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { cloneDeep } from 'lodash'
 import { mpj, DavDavDavid, igor, bobbyTables, jimmyPesto, badJason } from './fixtures'
-import { formatUser, makeFetchUsers } from '../src/users'
+import { formatUser, makeFetchUsers, userMentionsSkill } from '../src/users'
 
 describe('user utils', () => {
 
@@ -39,5 +39,27 @@ describe('user utils', () => {
     })
     expect(await fetchUsers(1)).to.deep.equal([])
     expect(calls).to.equal(2)
+  })
+
+  it('should correctly detect if the user mentions a particular skill', () => {
+    const testMap = [
+      {
+        user: igor,
+        skill: 'Vue JS',
+        mentions: true,
+      },
+      {
+        user: mpj,
+        skill: 'Typing fast',
+        mentions: false
+      }
+    ]
+
+    for (let test of testMap) {
+      const actual = userMentionsSkill(test.user.formattedData(), test.skill)
+      const expected = test.mentions
+
+      expect(actual).to.equal(expected)
+    }
   })
 })
