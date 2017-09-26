@@ -14,6 +14,11 @@
   background: @color-background--dark;
   box-shadow: @box-shadow--main;
   border: 1px dotted @color-background--darker;
+
+  @media (max-width: @bp-mobile) {
+    grid-template-columns: 100%;
+    grid-template-areas: "userInfo" "skills";
+  }
 }
 
 .userInfo {
