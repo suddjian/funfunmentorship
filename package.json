@@ -47,7 +47,5 @@
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.4.1"
   },
-  "dependencies": {
-    "classnames": "^2.2.5"
-  }
+  "dependencies": {}
 }

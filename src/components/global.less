@@ -1,13 +1,21 @@
 @import './mixins.less';
 
-:global * {
-  box-sizing: border-box;
-}
+:global {
+    * {
+      box-sizing: border-box;
+    }
 
-:global body {
-  background: @color-background;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    html, body {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: @color-background;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+} 
+
 
 

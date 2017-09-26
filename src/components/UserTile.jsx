@@ -1,7 +1,6 @@
 
 import React from 'react'
 import style from './UserTile.less'
-import classNames from 'classnames'
 import Geopin from './Geopin'
 import ProfileCard from './ProfileCard'
 
@@ -11,7 +10,7 @@ const SkillList = ({ className, title, list }) => (
     <h3 className={`title ${style.skillsCategoryTitle}`}>{title}</h3>
     <ul className={style.skills}>
       {list.map(tech =>
-        <li key={tech} className={[`skill skill-${title}`]}>{tech}</li>
+        <li key={tech} className={[style.skill, style[title]].join(' ')}>{tech}</li>
       )}
     </ul>
   </div>

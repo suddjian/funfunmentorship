@@ -23,13 +23,21 @@
 @color-contrast: #F79321;
 @color-lightcontrast: lighten(@color-contrast, 20%);
 
-// Shadows
-@box-shadow--main: 0px 1rem 2rem -1rem fade(@color-black, 20%);
-
+// Stylings
+@box-shadow--base: 0px 1rem 2rem -1rem fade(@color-black, 20%);
+@border--base: 1px dotted @color-background--darker;
+@border-radius--base:   0.3rem;
 
 // Breakpoints 
 @bp-mobile: 800px;
 
-
 // Metrics
-@base-padding: 3rem;
+@padding--base:          3rem;
+@margin--base:           3rem;
+
+// Z-index
+@z-index--1: 100;
+@z-index--2: 200;
+@z-index--3: 300;
+@z-index--4: 400;
+@z-index--top: 9000;

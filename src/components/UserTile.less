@@ -6,23 +6,24 @@
   display: grid;
   grid-template-areas: "userInfo skills";
   grid-template-columns: 30% 70%;
-  border-radius: .3em;
-  margin-bottom: 2em;
+  border-radius: @border-radius--base;
+  margin: @margin--base auto;
   overflow: hidden;
   background: @color-background--dark;
-  box-shadow: @box-shadow--main;
-  border: 1px dotted @color-background--darker;
+  box-shadow: @box-shadow--base;
+  border: @border--base;
+  max-width: 900px;
 
   @media (max-width: @bp-mobile) {
-    grid-template-columns: 100%;
-    grid-template-areas: "userInfo" "skills";
+    display: block;
+    width: calc(100%-@margin--base*2)
   }
 }
 
 
 .skillArea {
   grid-area: skills;
-  padding: @base-padding * 0.3 @base-padding;
+  padding: @padding--base * 0.3 @padding--base;
 }
 
 .skillsCategory {
@@ -43,7 +44,7 @@
       border-top-width: 1rem;
       border-bottom-width: 1rem;
       border-right: 1.5rem solid @color-background--dark;
-      left: -1.5rem - @base-padding;
+      left: -1.5rem - @padding--base;
     }
   }
 }
@@ -63,7 +64,7 @@
 
 // FIX ME - First time working with CSS Modules, 
 // this can't be globally scoped, dunno how to fix! :(
-:global .skill {
+.skill {
   padding: 0.5em 0.9em;
   margin-right: @skill-gutter;
   margin-bottom: @skill-gutter;
@@ -73,13 +74,13 @@
   display: inline-block;
 }
 
-:global .skill-Seeking {
+.Seeking {
   color: @color-primary--font;
   background-color: @color-primary;
 }
 
 
-:global .skill-Offering {
+.Offering {
     color: @color-secondary--font;
     background-color: @color-secondary;
 }
