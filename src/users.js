@@ -34,7 +34,8 @@ export const formatUser = (user) => {
   return {
     ...user,
     url: `https://www.funfunforum.com/u/${user.username}/`,
-    mentorship: json && json.mentorship && normalizeMentorship(json.mentorship)
+    mentorship: json && json.mentorship && normalizeMentorship(json.mentorship),
+    location: json && json.usermap_location || undefined
   }
 }
 

@@ -1,0 +1,36 @@
+@import './mixins';
+@import './typography';
+
+@profile-pic-width: 80px;
+
+.profileCard {
+  grid-area: userInfo;
+  background-color: @color-background--darker;
+  padding: @padding--base*0.7 @padding--base;
+  text-align: center;
+}
+
+.image {
+  border-radius: @profile-pic-width / 2;
+  width: @profile-pic-width;
+  height: @profile-pic-width;
+}
+
+.name {
+  display: block;
+  font-weight: @font-weight--bold;
+  font-size: 1.3em;
+  padding-top: 0.8em;
+}
+
+.location {
+  display: block;
+  font-size: 0.9em;
+  padding-top: 0.2em;
+}
+
+.caption {
+  display: block;
+  font-size: 0.9em;
+  padding-top: 1em;
+}

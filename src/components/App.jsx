@@ -34,8 +34,10 @@ export default class App extends React.Component {
   render () {
     return (
       <div className={style.app} >
-        <h1 className='title'>Connecting Functioneers Since 2am!</h1>
-        <Filter onChange={this.onFilterChange.bind(this)} />
+        <header className={style.mainHeader}>
+          <h1 className={style.pageHeading}>Connecting Functioneers Since 2am!</h1>
+          <Filter onChange={this.onFilterChange.bind(this)} />
+        </header>
         {
           this.state.users
           ? this.state.users

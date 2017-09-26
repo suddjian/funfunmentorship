@@ -1,43 +1,86 @@
-
 @import './mixins';
+
+@skill-gutter: 0.7em;
 
 .userTile {
   display: grid;
-  grid-template-areas:
-    "title title"
-    "skills skills";
-  grid-template-columns: 50% 50%;
-  border: solid 1px @color-light;
-  border-radius: .2em;
-  padding: .5em;
-  margin-bottom: 0.8em;
-  background: white;
+  grid-template-areas: "userInfo skills";
+  grid-template-columns: 30% 70%;
+  border-radius: @border-radius--base;
+  margin: @margin--base auto;
+  overflow: hidden;
+  background: @color-background--dark;
+  box-shadow: @box-shadow--base;
+  border: @border--base;
+  max-width: 900px;
+
+  @media (max-width: @bp-mobile) {
+    display: block;
+    width: calc(100%-@margin--base*2)
+  }
 }
 
-.username {
-  grid-area: title;
+
+.skillArea {
+  grid-area: skills;
+  padding: @padding--base * 0.3 @padding--base;
 }
 
-.skillList {
+.skillsCategory {
+  padding: 2em 2em 2em-@skill-gutter;
+  display: flex;
+  position: relative;
+
+  &:first-child {
+    border-bottom: 1px solid @color-primary;
+    padding-top: 2.5em;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+      border-top-width: 1rem;
+      border-bottom-width: 1rem;
+      border-right: 1.5rem solid @color-background--dark;
+      left: -1.5rem - @padding--base;
+    }
+  }
+}
+
+.skills {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
-.skillTitle {
+.skillsCategoryTitle {
   margin: 0.5em 0;
+  font-size: 0.8rem;
+  padding-right: 3rem;
 }
 
+
+// FIX ME - First time working with CSS Modules, 
+// this can't be globally scoped, dunno how to fix! :(
 .skill {
-  padding: 0.2rem;
-  margin: 0.2rem;
+  padding: 0.5em 0.9em;
+  margin-right: @skill-gutter;
+  margin-bottom: @skill-gutter;
   white-space: nowrap;
-  font-size: 0.8rem;
-  color: @color-link;
-  background-color: @color-lightlink;
-  border: 1px solid @color-lightishlink;
-  border-radius: 0.1em;
+  font-size: 0.9rem;
+  border-radius: 0.15em;
+  display: inline-block;
+}
+
+.Seeking {
+  color: @color-primary--font;
+  background-color: @color-primary;
+}
+
+
+.Offering {
+    color: @color-secondary--font;
+    background-color: @color-secondary;
 }

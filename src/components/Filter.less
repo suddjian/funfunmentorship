@@ -1,8 +1,19 @@
+@import './mixins';
+
 .filter {
   width: 100%;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-  padding: 10px 20px;
+  max-width: 350px;
+  font-size: 0.9em;
+  border: none;
+  background-color: @color-background--dark;
   outline: none;
+  align-self: center;
+  padding: 1em;
+  border-radius: @border-radius--base;
+
+  @media (max-width: @bp-mobile) {
+    font-size: 0.8em;
+    max-width: 270px;
+  }
 }
 

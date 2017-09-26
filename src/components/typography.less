@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+@font-weight--regular:  400;
+@font-weight--bold:     700;
+
+body {
+    font-family: 'PT Sans', Helvetica, sans-serif;
+    font-weight: @font-weight--regular;
+    color: @color-font;
+}
+
+:global {
+    h1, h2, h3, h4, h5 {
+        color: @color-font;
+    }
+}   
+
+:global a {
+  color: @color-link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

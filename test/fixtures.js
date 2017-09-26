@@ -8,6 +8,11 @@ export const mpj = {
     username: 'mpj',
     "hackable_json": "{ \"usermap_location\": { \"lat\": 57.7089, \"lng\": 11.9746, \"caption\": \"Gôtt mos\" }, \"other_prop\": 1}",
     url: 'https://www.funfunforum.com/u/mpj/',
+    location: {
+      caption: "Gôtt mos",
+      lat: 57.7089,
+      lng: 11.9746
+    },
     mentorship: undefined // no offense to mpj, the field is just empty in his hackablJSON /shrug
   })
 }
@@ -24,6 +29,11 @@ export const DavDavDavid = {
     mentorship: {
       seeking: ['golang', 'ElasticSearch'],
       offering: ['Javascript', 'es2016', 'mongoDB']
+    },
+    location: {
+      caption: "Programstinating",
+      lat: 36.9927,
+      lng: -122.1697
     }
   })
 }
@@ -40,6 +50,11 @@ export const igor = {
     "mentorship": {
       "seeking": [ "Python", "Elasticsearch", "Vue.js" ],
       "offering": [ "JavaScript", "ES2016", "React", "React Native" ]
+    },
+    location: {
+      caption: "Division Bell T-Shirt",
+      lat: -19.936238,
+      lng: -43.9322763
     }
   })
 }
@@ -72,7 +87,8 @@ export const bobbyTables = {
     mentorship: {
       seeking: [],
       offering: ["<script>alert('xss!')</script>"]
-    }
+    },
+    location: undefined
   })
 }
 
@@ -88,7 +104,8 @@ export const jimmyPesto = {
     mentorship: {
       seeking: [],
       offering: ['invalid']
-    }
+    },
+    location: undefined
   })
 }
 
@@ -101,6 +118,7 @@ export const badJason = {
     username: 'badJason',
     hackable_json: '{mentorship: { offering: "no quotes" }}',
     url: 'https://www.funfunforum.com/u/badJason/',
-    mentorship: undefined
+    mentorship: undefined,
+    location: undefined
   })
 }
