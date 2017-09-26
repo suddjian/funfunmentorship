@@ -1,7 +1,5 @@
 @import './mixins';
-@import './typography';
 
-@base-padding: 3rem;
 @skill-gutter: 0.7em;
 
 .userTile {
@@ -19,32 +17,6 @@
     grid-template-columns: 100%;
     grid-template-areas: "userInfo" "skills";
   }
-}
-
-.userInfo {
-  grid-area: userInfo;
-  background-color: @color-background--darker;
-  padding: @base-padding*0.7 @base-padding;
-  text-align: center;
-}
-
-.userName {
-  display: block;
-  font-weight: @font-weight--bold;
-  font-size: 1.3em;
-  padding-top: 0.8em;
-}
-
-.userLocation {
-  display: block;
-  font-size: 0.9em;
-  padding-top: 0.2em;
-}
-
-.userCaption {
-  display: block;
-  font-size: 0.9em;
-  padding-top: 1em;
 }
 
 
