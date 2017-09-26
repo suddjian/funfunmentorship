@@ -7,7 +7,7 @@
   "homepage": "https://github.com/ChemicalRocketeer/funfunmentorship",
   "license": "MIT",
   "scripts": {
-    "test": "set \"NODE_ENV=test\" && mocha --require babel-register --require babel-polyfill --require ./src/conf test/*.js",
+    "test": "cross-env NODE_ENV=test mocha --require babel-register --require babel-polyfill --require ./src/conf test/*.js",
     "test:watch": "npm run test -- --watch",
     "build": "npm test && npm run lint && webpack -p",
     "start": "webpack-dev-server --hot --history-api-fallback --open",
@@ -31,6 +31,7 @@
     "bluebird": "^3.5.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "eslint": "^4.7.0",
     "file-loader": "^0.11.2",
