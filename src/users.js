@@ -1,3 +1,4 @@
+import { normalize } from './skills'
 
 const benignErrorCodes = [
   'warming_up'
@@ -42,9 +43,9 @@ export const userMentionsSkill = (user, skill) => {
     return false
   }
 
-  skill = skill.toLowerCase()
-  const seeking = user.mentorship.seeking.map(x => x.toLowerCase())
-  const offering = user.mentorship.offering.map(x => x.toLowerCase())
+  skill = normalize(skill.toLowerCase())
+  const seeking = user.mentorship.seeking.map(normalize)
+  const offering = user.mentorship.offering.map(normalize)
   const includesSkill = list => list.some(x => x.includes(skill))
 
   return includesSkill(seeking) || includesSkill(offering)
