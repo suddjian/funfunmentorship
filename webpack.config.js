@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const OUT_DIR = path.resolve(__dirname, './docs')
+const OUT_DIR = path.resolve(__dirname, './dist')
 const PORT = process.env.PORT || 9876
 
 module.exports = {
