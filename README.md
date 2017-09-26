@@ -1,3 +1,6 @@
+
+[![buildstatus][travis]](https://travis-ci.org/ChemicalRocketeer/funfunmentorship)
+
 # funfunmentorship
 
 This project aims to pair people seeking to expand their knowledge with people willing to impart their wisdom.
@@ -19,3 +22,5 @@ that probably won't see the light of day due to lack of time.
 I'm also not so good with making things stylish and flashy, so if you are into that be my guest.
 
 When developing, you can run `npm start` to start up a dev server with hot reloading.
+
+[travis]: https://travis-ci.org/ChemicalRocketeer/funfunmentorship.svg?branch=master
