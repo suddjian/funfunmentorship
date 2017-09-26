@@ -22,7 +22,7 @@ const SkillList = ({ className, title, list }) => (
 const Location = ({user}) => {
   if (user.location) {
     return (
-      <a className={style.userLocation}>
+      <a className={style.userLocation} href="https://vazerthon.github.io/funfunforum-usermap/">
         <Geopin />
         {user.location.lat}, {user.location.lng}
       </a>
