@@ -35,7 +35,15 @@ export default class App extends React.Component {
     return (
       <div className={style.app} >
         <header className={style.mainHeader}>
-          <h1 className={style.pageHeading}>There are {this.state.users.length} Functioneers waiting to connect!</h1>
+          <h1 className={style.pageHeading}>
+              {
+                this.state.users 
+                ? `There are ${this.state.users.length} Functioneers waiting to connect!`
+                : this.state.error
+                ? "Error! O.o"
+                : "Loading..."
+              }
+          </h1>
           <Filter onChange={this.onFilterChange.bind(this)} />
         </header>
         {
@@ -45,9 +53,7 @@ export default class App extends React.Component {
             .map(user =>
               <UserTile user={user} key={user.username} />
             )
-          : this.state.error
-          ? "Error! O.o"
-          : "Loading..."
+          : null
         }
       </div>
     )
