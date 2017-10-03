@@ -9,9 +9,15 @@ describe('skill utils', () => {
     expect(normalize('ElasticSearch')).to.equal(normalize('elasticsearch'))
     expect(normalize('Elastic Search')).to.equal(normalize('elasticsearch'))
     expect(normalize('elastic_search')).to.equal(normalize('elasticsearch'))
+    expect(normalize('elastic-search')).to.equal(normalize('elasticsearch'))
     expect(normalize('Vue.js')).to.equal(normalize('vuejs'))
     expect(normalize('JavaScript')).to.equal(normalize('javascript'))
     expect(normalize('es2016')).to.not.equal(normalize('es2015'))
+    expect(normalize('C++')).to.not.equal(normalize('C'))
+    expect(normalize('C--')).to.not.equal(normalize('C'))
+    expect(normalize('C--')).to.not.equal(normalize('C++'))
+    expect(normalize('C#')).to.not.equal(normalize('C'))
+    expect(normalize('C*')).to.not.equal(normalize('C'))
   })
 
   it('should map a user\'s skills correctly', () => {

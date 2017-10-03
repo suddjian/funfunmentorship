@@ -2,7 +2,7 @@
 import { flatten, uniq } from 'lodash'
 
 // transforms a skill name into a standardized version that can be used as an id or a key or whatever
-export const normalize = (skillname) => skillname.toLowerCase().replace(/[^a-z0-9]/g, '')
+export const normalize = (skillname) => skillname.toLowerCase().replace(/[^-+*#a-z0-9]|(?:[-+*#]+(?=[a-z0-9]))/g, '')
 
 // extract a user's seeked and offered skills into the skills map
 // non-pure, modifies `skillMap`
