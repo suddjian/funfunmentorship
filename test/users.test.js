@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { cloneDeep } from 'lodash'
 import { mpj, DavDavDavid, igor, bobbyTables, jimmyPesto, badJason } from './fixtures'
-import { formatUser, makeFetchUsers, userMentionsSkill } from '../src/users'
+import { formatUser, makeFetchUsers, userMentionsSkill, normalizeMentorship } from '../src/users'
 
 describe('user utils', () => {
 
@@ -21,6 +21,23 @@ describe('user utils', () => {
       [ mpj.rawData(), DavDavDavid.rawData(), igor.rawData() ]
     )
     expect(await fetchUsers()).to.deep.equal([DavDavDavid.formattedData(), igor.formattedData()])
+  })
+
+  it('should ignore users with weird empty mentorship fields', () => {
+    const mentorships = [
+      {
+        seeking: [],
+        offering: []
+      },
+      { seeking: '' },
+      {},
+      { offering: [] },
+      '',
+      '   ',
+      { seeking: ['', '', ''] },
+      { seeking: [' ', ' ', ' '] }
+    ]
+    mentorships.forEach(mnt => expect(normalizeMentorship(mnt)).to.not.exist)
   })
 
   it('should handle benign errors when loading users', async () => {

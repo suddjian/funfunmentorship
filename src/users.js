@@ -19,12 +19,20 @@ const toArray = (data) => {
     data = []
   }
   return data.filter(item => typeof item === 'string')
+             .map(item => item.trim())
 }
 
-export const normalizeMentorship = (mentorship) => ({
-  seeking: toArray(mentorship.seeking).map(String),
-  offering: toArray(mentorship.offering)
-})
+const isEmpty = (arr) => arr.some(item => !!item)
+
+export const normalizeMentorship = (mentorship) => {
+  const seeking = toArray(mentorship.seeking).map(String)
+  const offering = toArray(mentorship.offering).map(String)
+  if (!isEmpty(seeking) && !isEmpty(offering)) return undefined;
+  return {
+    seeking,
+    offering
+  }
+}
 
 export const getProfileUrl = (size) => (username) =>
   `https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/${username}/${size}/1133_1.png`
