@@ -35,6 +35,6 @@ I'm also not so good with making things stylish and flashy, so if you are into t
 
 1. When you're ready, go ahead and open up a pull request. Someone will review your work and request some changes if necessary. When everything looks good, the code will be merged in. The production app should pick up your changes automatically within a minute or two. Thanks for contributing!
 
-I use yarn but I won't be documenting it here, if you want to use it go ahead. If you that don't know what yarn is, it's basically a souped-up npm that is usually a bit better.
+I use yarn but I won't be documenting it here, if you want to use it go ahead. If you don't know what yarn is, it's basically a souped-up npm that is usually a bit better.
 
 [travis]: https://travis-ci.org/ChemicalRocketeer/funfunmentorship.svg?branch=master
