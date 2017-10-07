@@ -23,11 +23,11 @@ I'm also not so good with making things stylish and flashy, so if you are into t
 
 ### Contributing, start to finish
 
-1. Fork and clone the project. This will put the project on your desktop so you can work on it.
+1. Fork and clone the project. This will put the project on your desktop so you can work on it. I recommend [GitHub Desktop](https://desktop.github.com/) if you haven't done this before.
 
 1. Install [node.js](https://nodejs.org/en/). This will also install `npm`, the node package manager.
 
-1. Open up a command line window in the project directory. Run `npm install`. This will install all the third-party modules this project depends on. (If there's an error here, something is probably broken in the project! Please post about it on the issues page!)
+1. Open up a command line window in the project directory. Run `npm install`. This will install all the third-party modules this project depends on. (If there's an error here, something is probably broken in the project! Please let us know on the issues page!)
 
 1. Hack away! When developing, you can run `npm start` in the command line to start up a dev server with hot reloading (meaning when you write new code, it will show up in the browser window without you needing to refresh the page. (For most types of code changes. It's not perfect.))
 
