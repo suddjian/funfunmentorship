@@ -21,6 +21,20 @@ that probably won't see the light of day due to lack of time.
 
 I'm also not so good with making things stylish and flashy, so if you are into that be my guest.
 
-When developing, you can run `npm start` to start up a dev server with hot reloading.
+### Contributing, start to finish
+
+1. Fork and clone the project. This will put the project on your desktop so you can work on it.
+
+1. Install [node.js](https://nodejs.org/en/). This will also install `npm`, the node package manager.
+
+1. Open up a command line window in the project directory. Run `npm install`. This will install all the third-party modules this project depends on. (If there's an error here, something is probably broken in the project! Please post about it on the issues page!)
+
+1. Hack away! When developing, you can run `npm start` in the command line to start up a dev server with hot reloading (meaning when you write new code, it will show up in the browser window without you needing to refresh the page. (For most types of code changes. It's not perfect.))
+
+1. If you think it's warranted, write a test or two for your new code. Run `npm test` to run the tests. You can also run `npm run test:watch` to have the tests run every time the code changes.
+
+1. When you're ready, go ahead and open up a pull request. Someone will review your work and request some changes if necessary. When everything looks good, the code will be merged in. The production app should pick up your changes automatically within a minute or two. Thanks for contributing!
+
+I use yarn but I won't be documenting it here, if you want to use it go ahead. If you that don't know what yarn is, it's basically a souped-up npm that is usually a bit better.
 
 [travis]: https://travis-ci.org/ChemicalRocketeer/funfunmentorship.svg?branch=master
