@@ -25,7 +25,7 @@ I'm also not so good with making things stylish and flashy, so if you are into t
 
 1. Fork and clone the project. This will put the project on your desktop so you can work on it. I recommend [GitHub Desktop](https://desktop.github.com/) if you haven't done this before.
 
-1. Install [node.js](https://nodejs.org/en/). This will also install `npm`, the node package manager.
+1. Install [node.js](https://nodejs.org/). This will also install `npm`, the node package manager.
 
 1. Open up a command line window in the project directory. Run `npm install`. This will install all the third-party modules this project depends on. (If there's an error here, something is probably broken in the project! Please let us know on the issues page!)
 
