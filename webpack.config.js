@@ -58,7 +58,7 @@ module.exports = {
     new OfflinePlugin({
       publicPath: process.env.NODE_ENV === 'prod' ? '/funfunmentorship/' : '/',
       Serviceworker: {
-        publicPath: process.env.NODE_ENV === 'prod' ? '/funfunmentorship/' : '/', 
+        publicPath: process.env.NODE_ENV === 'prod' ? '/funfunmentorship/sw.js' : '/', 
       },
     })
 
