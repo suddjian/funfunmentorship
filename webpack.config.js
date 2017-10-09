@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: OUT_DIR,
-    publicPath: '/',
+    publicPath: '/funfunmentorship/',
     filename: '[name].js'
   },
   devServer: {
@@ -54,12 +54,7 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new OfflinePlugin({
-      publicPath: '/funfunmentorship/',
-      ServiceWorker: {
-        publicPath: '/funfunmentorship/sw.js' 
-      },
-    })
+    new OfflinePlugin()
 
   ],
   resolve: {
