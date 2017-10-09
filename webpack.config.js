@@ -54,7 +54,11 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new OfflinePlugin()
+    new OfflinePlugin({
+      externals: [
+        'https://ffforumautomator.herokuapp.com/hackable-data'
+      ]
+    })
 
   ],
   resolve: {
