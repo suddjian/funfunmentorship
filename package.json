@@ -11,7 +11,7 @@
     "test": "cross-env NODE_ENV=test mocha --require babel-register --require babel-polyfill --require ./src/conf test/*.js",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src/",
-    "build": "webpack -p --env.production"
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,6 @@
     "lodash": "^4.17.4",
     "mocha": "^3.5.3",
     "offline-plugin": "^4.8.4",
-    "postcss-loader": "^2.0.6",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.6",
