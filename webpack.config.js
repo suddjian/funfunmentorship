@@ -55,7 +55,9 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new OfflinePlugin()
+    new OfflinePlugin({
+      publicPath: process.env.NODE_ENV === 'prod' ? '/mentorship' : output.publicPath 
+    })
 
   ],
   resolve: {
