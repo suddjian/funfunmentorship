@@ -3,6 +3,7 @@ const path = require('path')
 const OfflinePlugin = require('offline-plugin')
 const OUT_DIR = path.resolve(__dirname, './dist')
 const PORT = process.env.PORT || 9876
+const prodBuild = process.env.TRAVIS
 
 module.exports = {
   devtool: 'source-map',
@@ -15,7 +16,7 @@ module.exports = {
   },
   output: {
     path: OUT_DIR,
-    publicPath: process.env.TRAVIS ? '/funfunmentorship/' : '/',
+    publicPath: prodBuild ? '/funfunmentorship/' : '/',
     filename: '[name].js'
   },
   devServer: {
