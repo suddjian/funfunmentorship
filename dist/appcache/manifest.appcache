@@ -1,0 +1,9 @@
+CACHE MANIFEST
+#ver:2017-10-8 18:13:01
+#plugin:4.8.4
+
+CACHE:
+/app.js
+
+NETWORK:
+*
