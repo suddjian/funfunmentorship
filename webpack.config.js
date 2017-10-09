@@ -3,8 +3,7 @@ const path = require('path')
 const OfflinePlugin = require('offline-plugin')
 const OUT_DIR = path.resolve(__dirname, './dist')
 const PORT = process.env.PORT || 9876
-const env = process.env.NODE_ENV
-console.log(env)
+
 module.exports = {
   devtool: 'source-map',
   entry: {
@@ -56,7 +55,7 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new OfflinePlugin({
-      publicPath: process.env.NODE_ENV == 'prod' ? '/funfunmentorship/' : '/',
+      publicPath: '/funfunmentorship/',
       ServiceWorker: {
         publicPath: '/funfunmentorship/sw.js' 
       },
