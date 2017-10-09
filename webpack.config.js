@@ -56,7 +56,7 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new OfflinePlugin({
-      publicPath: process.env.NODE_ENV === 'prod' ? '/mentorship' : output.publicPath 
+      publicPath: process.env.NODE_ENV === 'prod' ? '/funfunmentorship' : this.output.publicPath 
     })
 
   ],
