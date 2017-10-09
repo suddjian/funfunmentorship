@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: OUT_DIR,
-    publicPath: '/funfunmentorship/',
+    publicPath: process.env.NODE_ENV === 'prod' ? '/funfunmentorship/' : '/',
     filename: '[name].js'
   },
   devServer: {
