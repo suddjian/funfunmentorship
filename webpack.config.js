@@ -68,7 +68,6 @@ module.exports = {
     new OfflinePlugin({
       externals: [
         'https://ffforumautomator.herokuapp.com/hackable-data',
-        'https://discourse-cdn-sjc1.com/standard6/user_avatar/www.funfunforum.com/'
       ]
     })
 
