@@ -68,7 +68,8 @@ module.exports = {
     new OfflinePlugin({
       externals: [
         'https://ffforumautomator.herokuapp.com/hackable-data',
-        '/funfunmentorship/'
+        '/funfunmentorship/',
+        'https://fonts.googleapis.com/css?family=PT+Sans:400,700'
       ]
     })
 
