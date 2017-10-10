@@ -66,6 +66,9 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new OfflinePlugin({
+      ServiceWorker : {
+        entry: path.resolve(__dirname, './dist/sw.js')
+      },
       externals: [
         'https://ffforumautomator.herokuapp.com/hackable-data',
         '/funfunmentorship/',
