@@ -31,7 +31,7 @@ export default ({user}) => (
   <section className={style.profileCard}>
     <span>
       <a className={style.link} href={user.url}>
-      <LazyLoad className={style.image} height={80}>
+      <LazyLoad once={true} offset={100} height={80}>
         <img className={style.image} src={getTitlePic(user.username)} />
       </LazyLoad>
         <span className={style.name}>{user.username}</span>
