@@ -72,7 +72,6 @@ module.exports = {
       externals: [
         'https://ffforumautomator.herokuapp.com/hackable-data',
         '/funfunmentorship/',
-        // 'https://fonts.googleapis.com/css?family=PT+Sans:400,700'
       ]
     })
 
