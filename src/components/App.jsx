@@ -26,7 +26,7 @@ export default class App extends React.Component {
     }
   }
 
-  onFilterChange(event) {
+  onFilterChange = (event) => {
     const text = event.target.value
     this.setState({ filter: text })
   }
@@ -44,7 +44,7 @@ export default class App extends React.Component {
                 : "Loading..."
               }
           </h1>
-          <Filter onChange={this.onFilterChange.bind(this)} />
+          <Filter onChange={this.onFilterChange} />
         </header>
         {
           this.state.users

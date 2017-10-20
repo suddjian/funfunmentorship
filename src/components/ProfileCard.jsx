@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './ProfileCard.less'
 import Geopin from './Geopin'
-
+import LazyLoad from 'react-lazyload'
 import { getProfileUrl } from '../users'
 
 const getTitlePic = getProfileUrl(160) // making it crisp for them retina screens
@@ -31,7 +31,9 @@ export default ({user}) => (
   <section className={style.profileCard}>
     <span>
       <a className={style.link} href={user.url}>
+      <LazyLoad once={true} offset={100} height={80}>
         <img className={style.image} src={getTitlePic(user.username)} />
+      </LazyLoad>
         <span className={style.name}>{user.username}</span>
       </a>
       <Location user={user} />

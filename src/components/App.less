@@ -3,11 +3,14 @@
 @import './global.less';
 
 .app {
-  margin: 0 auto;
-  width: 100%;
-  color: @color-dark;
-  margin-top: @margin--base*3;
-  padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    color: @color-dark;
+    margin-top: @margin--base*3;
+    padding: 0;
+    @media (max-width: @bp-mobile) {
+        margin-top: @margin--base*4;
+    }
 }
 
 .mainHeader {
