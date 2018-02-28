@@ -6,7 +6,7 @@ import style from './App.less'
 import { makeFetchUsers, userMentionsSkill } from '../users'
 
 const fetchUsers = makeFetchUsers(async () =>
-  await (await fetch('https://funfunautomator.herokuapp.com/hackablejson')).json()
+  await (await fetch('https://ffforumautomator.herokuapp.com/hackable-data')).json()
 )
 
 export default class App extends React.Component {
