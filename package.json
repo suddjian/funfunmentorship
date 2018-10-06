@@ -21,7 +21,7 @@
     "url": "http://github.com/ChemicalRocketeer/funfunmentorship/issues"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.0.0",
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.23.0",
@@ -38,7 +38,7 @@
     "json-loader": "^0.5.7",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.11",
     "mocha": "^3.5.3",
     "offline-plugin": "^4.8.4",
     "postcss-loader": "^2.0.6",
