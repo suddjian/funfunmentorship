@@ -4,6 +4,7 @@ import UserTile from './UserTile'
 import Filter from './Filter'
 import style from './App.less'
 import { makeFetchUsers, userMentionsSkill } from '../users'
+import Loader from './Loader';
 
 const fetchUsers = makeFetchUsers(async () =>
   await (await fetch('https://ffforumautomator.herokuapp.com/hackable-data')).json()
@@ -41,7 +42,7 @@ export default class App extends React.Component {
                 ? `There are ${this.state.users.length} Functioneers waiting to connect!`
                 : this.state.error
                 ? "Error! O.o"
-                : "Loading..."
+                : <Loader />
               }
           </h1>
           <Filter onChange={this.onFilterChange} />
