@@ -11,7 +11,7 @@ To participate, edit your `hackable_json` to include a `mentorship` field with `
 { "mentorship": { "seeking": [ "Rust", "Unity3D", "R" ], "offering": [ "VanillaJS", "Angular", "Drupal" ] }}
 ```
 
-The app is hosted here: https://chemicalrocketeer.github.io/funfunmentorship/
+The app is hosted here: https://suddjian.github.io/funfunmentorship/
 
 ## Contributing
 Feel free to open up a PR, I have some features planned that I will be adding into the GitHub Projects page,
